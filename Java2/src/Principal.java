@@ -19,24 +19,33 @@ X= nome da classe, sendo o primeiro X para criar a variável e o segundo para re
     N = nome de um método
 
 O comando CTRL + ALT + I identa o código
+
+Em java, String não é um tipo primitivo e sim uma classe, com atributos e métodos
+
+Documentação Java
+https://docs.oracle.com/en/java/
+https://docs.oracle.com/en/java/javase/19/docs/api/index.html
+https://docs.oracle.com/en/java/javase/17/docs/api/index.html
+
 */
+
+import PacoteClasses.PrimeiraClasse;
+
 public class Principal {
     public static void main(String[] args) {
 
-        String mensagemMontada;
-
         PrimeiraClasse meuObjeto = new PrimeiraClasse();
-        meuObjeto.exemploString = "Estou criando um atributo de exemplo para o meu objeto!!!";
-        meuObjeto.exemploBoolean = true;
-        meuObjeto.exemploDouble = 1.25;
-        meuObjeto.exemploInt = 10;
-
-        System.out.println(meuObjeto.exemploString +"\n"+ meuObjeto);
+        meuObjeto.setExemploString("Estou criando um atributo de exemplo para o meu objeto!!!");
+        meuObjeto.setExemploBoolean(true);
+        meuObjeto.setExemploDouble(1.25);
+        meuObjeto.setExemploInt(100);
 
         meuObjeto.mostrarObjeto();
 
         meuObjeto.receberParametro("\n-----Nova frase aqui-----\n");
 
         System.out.println(meuObjeto.receberRetorno());
+        System.out.println("Valor secreto: "+meuObjeto.getValorSecreto());
+
     }
 }
