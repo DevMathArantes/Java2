@@ -28,24 +28,29 @@ https://docs.oracle.com/en/java/javase/19/docs/api/index.html
 https://docs.oracle.com/en/java/javase/17/docs/api/index.html
 
 */
-
 import PacoteClasses.PrimeiraClasse;
+import PacoteClasses.SegundaClasse;
 
 public class Principal {
     public static void main(String[] args) {
 
         PrimeiraClasse meuObjeto = new PrimeiraClasse();
-        meuObjeto.setExemploString("Estou criando um atributo de exemplo para o meu objeto!!!");
-        meuObjeto.setExemploBoolean(true);
-        meuObjeto.setExemploDouble(1.25);
+        meuObjeto.setExemploString("Primeiro objeto");
         meuObjeto.setExemploInt(100);
-
-        meuObjeto.mostrarObjeto();
-
+        meuObjeto.setIntHerdado(20);
+        meuObjeto.setStringHerdado("Herança aqui");
         meuObjeto.receberParametro("\n-----Nova frase aqui-----\n");
+        meuObjeto.metodoReescrito();
+        System.out.println(meuObjeto.descobrirClasse(meuObjeto));
+        meuObjeto.mostrarProtegida();
 
-        System.out.println(meuObjeto.receberRetorno());
-        System.out.println("Valor secreto: "+meuObjeto.getValorSecreto());
-
+        SegundaClasse outroObjeto = new SegundaClasse();
+        outroObjeto.setExemploBoolean(true);
+        outroObjeto.setExemploDouble(1.3);
+        outroObjeto.setIntHerdado(15);
+        outroObjeto.setStringHerdado("Segundo objeto");
+        outroObjeto.verificaAcesso();
+        outroObjeto.metodoReescrito();
+        System.out.println(outroObjeto.descobrirClasse(outroObjeto));
     }
 }

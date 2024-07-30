@@ -43,15 +43,40 @@ public: é visível e utilizavel em qualquer pacote do projeto
 
 default: não específica nenhuma visibilidade, portanto pode ser acessado pelas classes de mesmo pacote
 
+protected: permite utilizar a declaração nas subclasses
+
+Recebendo herança
+X class Y extends Z1,Z2...{...}
+X= visibilade da classe filha
+Y= classe filha
+Z= classe pai (quantas desejar, separadas por ",")
+
+Reescrevendo métodos
+Basta criar o método com o mesmo nome e alterar suas instruções
+
+Boas práticas para indicar métodos
+
+    @Override indica que um método está sobreescrevendo outro
+    @Deprecated indica que um método ou classe está obsoleto e não deve ser mais utilizado
+    @NotNull é usada para validar que um atributo não seja nulo
+
+Tipos de polimorfismo
+
+    Sobrecarga
+    Basta chamar as funções com o mesmo nome, porém modificando seus parâmetros de acordo com a classe
+    exemplo (X= classe1, Y= classe2 e  x/y = variáveis de parâmetro:
+    public String fazerAlgo(X x){...}
+    public String fazerAlgo(Y y){...}
+
+    Sobreposição
+    Basta reescrever o método com novas instruções na subclasse
+
 */
 package PacoteClasses;
+public class PrimeiraClasse extends ClassePai {
 
-public class PrimeiraClasse {
     private String exemploString;
     private int exemploInt;
-    private boolean exemploBoolean;
-    private double exemploDouble;
-    private int valorSecreto = 6457;
 
     public void setExemploString(String exemploString) {
         this.exemploString = exemploString;
@@ -59,24 +84,18 @@ public class PrimeiraClasse {
     public void setExemploInt(int exemploInt) {
         this.exemploInt = exemploInt;
     }
-    public void setExemploBoolean(boolean exemploBoolean) {
-        this.exemploBoolean = exemploBoolean;
-    }
-    public void setExemploDouble(double exemploDouble) {
-        this.exemploDouble = exemploDouble;
-    }
-
-    public int getValorSecreto(){
-        return valorSecreto;
-    }
-    public void mostrarObjeto(){
-        System.out.println("\n\n"+exemploString +"\n"+exemploInt+"\n"+exemploDouble+"\n"+exemploBoolean+"\n\n");
-    }
     public void receberParametro( String parametro){
         exemploString += parametro;
         System.out.println(exemploString);
     }
-    public double receberRetorno(){
-        return exemploInt * exemploDouble;
+
+    @Override
+    public void metodoReescrito(){
+        System.out.println("\nReescrito aqui.\n");
     }
+
+    public void mostrarProtegida(){
+        System.out.println(stringProtegida);
+    }
+
 }
