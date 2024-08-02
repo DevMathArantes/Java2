@@ -2,7 +2,7 @@ package Exemplos;
 
 import Exemplos.Classes.Gato;
 import Exemplos.Classes.Cachorro;
-import Exemplos.Calculos.Tutor;
+import Exemplos.Outros.Tutor;
 
 public class Principal {
     public static void main(String[] args) {
@@ -15,6 +15,8 @@ public class Principal {
         tom.setCastrado(false);
         tom.miar();
         tom.contraCachorro();
+        tom.setBrinquedo("Jerry");
+        System.out.println(tom.getBrinquedo());
 
         Cachorro scooby = new Cachorro();
         scooby.setIdade(7);
@@ -25,6 +27,8 @@ public class Principal {
         scooby.setPorte("grande");
         scooby.latir();
         scooby.contraCachorro();
+        scooby.setBrinquedo("Biscoito");
+        System.out.println(scooby.getBrinquedo());
 
         Cachorro caramelo = new Cachorro();
         caramelo.setNome("Chefe Caramelo");
@@ -35,9 +39,11 @@ public class Principal {
         caramelo.setIdade(18);
         caramelo.latir();
         caramelo.contraCachorro();
+        caramelo.setBrinquedo("Bola");
+        System.out.println(caramelo.getBrinquedo());
 
         Tutor salsicha = new Tutor();
-        salsicha.setNome("Salsicha Soares Sadia");
+        salsicha.setNome("\nSalsicha Soares Sadia");
         salsicha.contarPet(scooby.getNome());
         salsicha.contarPet(tom.getNome());
         salsicha.mostrarMeusPets();

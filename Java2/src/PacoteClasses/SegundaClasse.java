@@ -1,6 +1,6 @@
 package PacoteClasses;
 import java.util.Scanner;
-public class SegundaClasse extends ClassePai {
+public class SegundaClasse extends ClassePai implements PrimeiraInterface {
 
     Scanner ler = new Scanner(System.in);
     private boolean exemploBoolean;
@@ -24,4 +24,8 @@ public class SegundaClasse extends ClassePai {
         }
     }
 
+    @Override
+    public int getVariavel() {
+        return 0;
+    }
 }

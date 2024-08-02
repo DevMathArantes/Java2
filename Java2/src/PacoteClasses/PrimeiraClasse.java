@@ -46,7 +46,7 @@ default: não específica nenhuma visibilidade, portanto pode ser acessado pelas
 protected: permite utilizar a declaração nas subclasses
 
 Recebendo herança
-X class Y extends Z1,Z2...{...}
+X class Y extends Z{...}
 X= visibilade da classe filha
 Y= classe filha
 Z= classe pai (quantas desejar, separadas por ",")

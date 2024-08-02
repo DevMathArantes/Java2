@@ -2,7 +2,7 @@
 Esta classe será mais utilizada para calculos
 */
 
-package Exemplos.Calculos;
+package Exemplos.Outros;
 
 public class Tutor {
 

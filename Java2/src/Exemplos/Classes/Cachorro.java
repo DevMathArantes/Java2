@@ -1,9 +1,16 @@
 package Exemplos.Classes;
-public class Cachorro extends Animal{
+
+import Exemplos.Outros.Pertences;
+
+public class Cachorro extends Animal implements Pertences{
 
     private String porte;
     private boolean adestrado;
+    private String brinquedo;
 
+    public void setBrinquedo(String brinquedo) {
+        this.brinquedo = brinquedo;
+    }
     public void setPorte(String porte) {
         this.porte = porte;
     }
@@ -31,4 +38,8 @@ public class Cachorro extends Animal{
         System.out.println("Eu sou um cachorro");
     }
 
+    @Override
+    public String getBrinquedo() {
+        return "EU TENHO: "+brinquedo;
+    }
 }
